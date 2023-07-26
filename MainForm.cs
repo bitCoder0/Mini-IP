@@ -1,4 +1,15 @@
 
+/*
+ * Mini IP - A simple code to read ip information
+ * Code by A.J - RaadRun
+ * July 2023
+ * Feel free to change and learn :D
+ */
+
+
+
+
+
 namespace MiniIP
 {
 
@@ -8,9 +19,13 @@ namespace MiniIP
     using System.Text.Json;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Manages application main form behaviour
+    /// </summary>
     public partial class MainForm : Form
     {
 
+        //---------------API Endpoints---------------//
         string url = "http://ip-api.com/json";
         string urlLineMode = "http://ip-api.com/line";
         string latestIPCache = "NoData";
@@ -32,12 +47,17 @@ namespace MiniIP
             await getInfoAndUpdateUIAsync();
 
         }
+        /// <summary>
+        /// changes main form background color to a specific color
+        /// </summary>
         void changeBackColour()
         {
             this.BackColor = Color.FromArgb(44, 62, 80);
         }
 
-
+        /// <summary>
+        /// loads data from api and manages UI texts before and after loading
+        /// </summary>
         private async Task getInfoAndUpdateUIAsync()
         {
             txtIP.Text = "Loading...";
@@ -52,13 +72,11 @@ namespace MiniIP
                 try
                 {
                     txtIP.Text = "Checking result..";
-                    // Ensure that the request was successful
+                    // Ensure that the request was successful - throws exception on fail
                     response.EnsureSuccessStatusCode();
                 }
                 catch (HttpRequestException exc)
                 {
-
-
                     txtIP.Text = "Error in getting data:" + exc.Message;
                 }
                 // Read the JSON data from the response body
@@ -85,7 +103,9 @@ namespace MiniIP
             }
         }
 
-
+        /// <summary>
+        /// opens api url in web browser using shell execution
+        /// </summary>
         private void btnOpenURL_Click(object sender, EventArgs e)
         {
             try
@@ -103,16 +123,27 @@ namespace MiniIP
             }
         }
 
+        /// <summary>
+        /// saves ip in clipboard
+        /// called by copy ip button
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(latestIPCache);
         }
 
+        /// <summary>
+        /// saves request json in clipboard
+        /// called by copy json button
+        /// </summary>
         private void btnCopyJson_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(latestJsonCache);
         }
 
+        /// <summary>
+        /// opens app info form
+        /// </summary>
         private void btnAppInfo_click(object sender, EventArgs e)
         {
             AboutApp aboutForm = (AboutApp)Application.OpenForms["AboutApp"];

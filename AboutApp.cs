@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
 
 namespace MiniIP
 {
+    /// <summary>
+    /// manages app info page form behaviour
+    /// </summary>
     public partial class AboutApp : Form
     {
         public AboutApp()
@@ -17,6 +12,5 @@ namespace MiniIP
             InitializeComponent();
         }
 
- 
     }
 }

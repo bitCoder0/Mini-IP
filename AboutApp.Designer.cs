@@ -42,17 +42,17 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(255, 201);
+            textBox1.Size = new Size(301, 191);
             textBox1.TabIndex = 1;
             textBox1.TabStop = false;
-            textBox1.Text = "About:\r\nThis app is a simple tool to get information about your current ip.\r\n----\r\nAPI used in this app to get IP info:\r\nhttp://ip-api.com/line\r\n----\r\nGithub Page:\r\n----\r\nFont used:\r\nVazir Code Hack";
+            textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // AboutApp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InfoText;
-            ClientSize = new Size(275, 217);
+            ClientSize = new Size(311, 203);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");

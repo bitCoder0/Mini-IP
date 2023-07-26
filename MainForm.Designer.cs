@@ -112,7 +112,7 @@
             btnCopyJson.Name = "btnCopyJson";
             btnCopyJson.Size = new Size(87, 24);
             btnCopyJson.TabIndex = 3;
-            btnCopyJson.Text = "Copy Json";
+            btnCopyJson.Text = "Copy JSON";
             btnCopyJson.UseVisualStyleBackColor = false;
             btnCopyJson.Click += btnCopyJson_Click;
             // 
